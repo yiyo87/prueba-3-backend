@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Equipos</title>
+    
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/listadoequipos.css' %}">
+</head>
+<body class="container mt-5">
+    <div class="alert alert-info display-1 text-center">LISTA DE EQUIPOS</div>
+    
+    {% if equipos%}
+        <table class="table table-stylish">
+            <thead>
+                <tr>
+                    <th>Nombre Equipo</th>
+                    <th>Ciudad</th>
+                    <th>Conferencia</th>
+                    <th>Estadio</th>
+                    <th>Año Fundacion</th>
+                    <th>Accion</th>
+                </tr>
+        </thead>
+        <tbody>
+            {% for equipo in equipos %}
+                <tr>
+                    <td>{{ equipo.nombreEquipo }}</td>
+                    <td>{{ equipo.ciudad }}</td>
+                    <td>{{ equipo.conferencia }}</td>
+                    <td>{{ equipo.estadio }}</td>
+                    <td>{{ equipo.anioFundacion }}</td>
+                    <td><a href="/eliminarEquipos/{{equipo.id}}" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></td>
+                    <td><a href="/actualizarEquipos/{{equipo.id}}" class="btn btn-success btn-sm"><i class="bi bi-pencil"></i></td>    
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <div class="alert alert-primary" role="alert">
+        <strong>No se encuentran equipos registrados en el sistema</strong>
+    </div>
+    {% endif %}
+    <a href="/" class="btn btn-danger">VOLVER</a>
+    <a href="/agregarequipos" class="btn btn-info float-end">AGREGAR EQUIPO</a>
+</body>
+</html>

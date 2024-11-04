@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Jugadores</title>
+    
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/listadoequipos.css' %}">
+</head>
+<body class="container mt-5">
+    <div class="alert alert-info display-1 text-center">LISTA DE JUGADORES</div>
+    
+    {% if jugadores%}
+        <table class="table table-stylish">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Posicion</th>
+                    <th>Altura</th>
+                    <th>Peso</th>
+                    <th>Edad</th>
+                    <th>Equipo</th>
+                    <th>Acciones</th>
+                </tr>
+        </thead>
+        <tbody>
+            {% for jugadores in jugadores %}
+                <tr>
+                    <td>{{ jugadores.nombre }}</td>
+                    <td>{{ jugadores.apellido }}</td>
+                    <td>{{ jugadores.posicion }}</td>
+                    <td>{{ jugadores.altura }}</td>
+                    <td>{{ jugadores.peso }}</td>
+                    <td>{{ jugadores.edad }}</td>
+                    <td>{{ jugadores.equipo.nombreEquipo}}</td>
+                    <td><a href="/eliminarjugador/{{jugadores.id}}" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></td>
+                    <td><a href="/actualizarjugador/{{jugadores.id}}" class="btn btn-success btn-sm"><i class="bi bi-pencil"></i></td>    
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <div class="alert alert-primary" role="alert">
+        <strong>No se encuentran equipos registrados en el sistema</strong>
+    </div>
+    {% endif %}
+    <a href="/" class="btn btn-danger">VOLVER</a>
+    <a href="/agregarjugador" class="btn btn-info float-end">AGREGAR JUGADOR</a>
+</body>
+</html>

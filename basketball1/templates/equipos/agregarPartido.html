@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGREGAR PARTIDO</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/formularioequipo.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="alert alert-info text-center">FORMULARIO PARTIDO</div>
+        <form method="post">
+            {{ form.as_p }}
+            {% csrf_token %}
+            <input type="submit" value="Agregar Partido" class="btn btn-info">
+        </form>
+        <div class="back-btn-container">
+            <a href="../partidos" class="btn btn-info">PARTIDOS</a>
+        </div>
+    </div>
+</body>
+</html>
