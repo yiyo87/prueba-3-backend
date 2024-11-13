@@ -9,9 +9,10 @@
     <link rel="stylesheet" href="{% static 'css/listadoequipos.css' %}">
 </head>
 <body class="container mt-5">
-    <div class="alert alert-info display-1 text-center">LISTA DE EQUIPOS</div>
+    <div class="main-principal">
+        <div class="alert alert-info display-1 text-center">LISTA DE EQUIPOS</div>
     
-    {% if equipos%}
+        {% if equipos%}
         <table class="table table-stylish">
             <thead>
                 <tr>
@@ -31,7 +32,7 @@
                     <td>{{ equipo.conferencia }}</td>
                     <td>{{ equipo.estadio }}</td>
                     <td>{{ equipo.anioFundacion }}</td>
-                    <td><a href="/eliminarEquipos/{{equipo.id}}" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></td>
+                    <td><a href="/eliminarEquipos/{{equipo.id}}" class="btn btn-eliminar btn-sm"><i class="bi bi-trash"></i></td>
                     <td><a href="/actualizarEquipos/{{equipo.id}}" class="btn btn-success btn-sm"><i class="bi bi-pencil"></i></td>    
                 </tr>
             {% endfor %}
@@ -42,7 +43,10 @@
         <strong>No se encuentran equipos registrados en el sistema</strong>
     </div>
     {% endif %}
-    <a href="/" class="btn btn-danger">VOLVER</a>
-    <a href="/agregarequipos" class="btn btn-info float-end">AGREGAR EQUIPO</a>
+    <div class="botones">
+        <a href="/" class="btn btn-volver">VOLVER</a>
+        <a href="/agregarequipos" class="btn btn-agregar">AGREGAR EQUIPO</a>
+    </div>
+</div>
 </body>
 </html>

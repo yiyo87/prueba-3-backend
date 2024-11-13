@@ -1,26 +1,33 @@
-/* listadoequipos.css */
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
-    margin: 0;
-    padding: 0;
+:root {
+    --nba-blue: #1D428A;
+    --nba-red: #C8102E;
+    --nba-white: #FFFFFF;
+    --nba-gray: #333333;
+    --nba-light-gray: #F8F9FA;
+    --font-family: 'Roboto', sans-serif;
 }
 
-.container {
-    max-width: 1200px;
-    margin: auto;
+/*esta es la caja o contenedor principal de la pantalla*/
+.main-principal {
+    font-family: var(--font-family);
+    display: flex;
+    flex-direction:column;
+    justify-content: space-between;
+    text-align: center;
     padding: 20px;
+    background-color: var(--nba-white);
+    border-bottom: 1px solid var(--nba-gray);
 }
 
+/*este estilo es sobre el div de lista de equipos*/
 .alert-info {
     font-size: 2.5em;
-    color: #333;
-    background-color: #e1f5fe;
+    color: white;
+    background-color: #1D428A;
     padding: 20px;
     border-radius: 8px;
     font-weight: bold;
+    text-align: center;
 }
 
 .table-stylish {
@@ -40,7 +47,7 @@ body {
 }
 
 .table-stylish th {
-    background-color: #007bff;
+    background-color: #1D428A;
     color: #fff;
     font-weight: bold;
 }
@@ -53,30 +60,46 @@ body {
     background-color: #e9f5ff;
 }
 
+/*este es el div de los botones de abajo */
 .btn {
+    margin-top: 30px;
+    background-color: #1D428A;
     padding: 8px 15px;
+    border: 1px solid white;
+    cursor: pointer;
     font-size: 1em;
     text-decoration: none;
     color: #fff;
     border-radius: 5px;
     transition: background-color 0.3s ease;
+    
+}
+.btn:hover{
+    background-color:#C8102E;
+    color: white;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2); 
 }
 
-.btn-danger {
+.btn-eliminar {
     background-color: #dc3545;
+    
 }
 
-.btn-danger:hover {
+.btn-eliminar:hover {
     background-color: #c82333;
 }
 
-.btn-info {
-    background-color: #17a2b8;
+.botones{
+    
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex: 1;
+    width: 30%;
+    text-align: center;
+    margin: auto;
 }
 
-.btn-info:hover {
-    background-color: #138496;
-}
 
 .btn-success {
     background-color: #28a745;
@@ -86,12 +109,9 @@ body {
     background-color: #218838;
 }
 
-.float-end {
-    float: right;
-    margin-bottom: 20px;
-}
 
-/* Icon button adjustments */
+
+
 .btn-sm i {
     font-size: 1.2em;
     vertical-align: middle;

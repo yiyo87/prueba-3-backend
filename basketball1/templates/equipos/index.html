@@ -6,18 +6,71 @@
     <title>Basketball</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="main-container">
-        <header class="header">
-            <h1 class="title">BASKETBALL APP</h1>
+    <div class="main-principal">
+        <div class="teams">
+            
+            <img src="{% static 'img/conferenciaOeste/minesota.png' %}" alt="Team 1" style="width: 100px; height: auto; object-fit: cover; margin: 10px;">
+            <img src="{% static 'img/conferenciaOeste/golden.png' %}" alt="Team 2" style="width: 100px; height: 100px; object-fit: cover; margin: 10px;">
+            <img src="{% static 'img/conferenciaOeste/utah.png' %}" alt="Team 2" style="width: 100px; height: 100px; object-fit: cover; margin: 10px;">
+            <img src="{% static 'img/conferenciaOeste/spurs.png' %}" alt="Team 2" style="width: 100px; height: 100px; object-fit: cover; margin: 10px;">
+            <img src="{% static 'img/conferenciaOeste/sacramento.png' %}" alt="Team 2" style="width: 100px; height: 100px; object-fit: cover; margin: 10px;">
+            <img src="{% static 'img/conferenciaOeste/portland.png' %}" alt="Team 2" style="width: 100px; height: 100px; object-fit: cover; margin: 10px;">
+            <img src="{% static 'img/conferenciaOeste/suns.png' %}" alt="Team 2" style="width: 100px; height: 100px; object-fit: cover; margin: 10px;">
+            <img src="{% static 'img/conferenciaOeste/okc.png' %}" alt="Team 2" style="width: 100px; height: 100px; object-fit: cover; margin: 10px;">
+            <img src="{% static 'img/conferenciaOeste/pelicans.png' %}" alt="Team 2" style="width: 100px; height: 100px; object-fit: cover; margin: 10px;">
+            <img src="{% static 'img/conferenciaOeste/memphis.png' %}" alt="Team 2" style="width: 100px; height: 100px; object-fit: cover; margin: 10px;">
+            <img src="{% static 'img/conferenciaOeste/lakers.png' %}" alt="Team 2" style="width: 100px; height: 100px; object-fit: cover; margin: 10px;">
+            <img src="{% static 'img/conferenciaOeste/clippers.png' %}" alt="Team 2" style="width: 100px; height: 100px; object-fit: cover; margin: 10px;">
+            <img src="{% static 'img/conferenciaOeste/rockets.png' %}" alt="Team 2" style="width: 100px; height: 100px; object-fit: cover; margin: 10px;">
+            <img src="{% static 'img/conferenciaOeste/nuggets.png' %}" alt="Team 2" style="width: 100px; height: 100px; object-fit: cover; margin: 10px;">
+            <img src="{% static 'img/conferenciaOeste/mavericks.png' %}" alt="Team 2" style="width: 100px; height: 100px; object-fit: cover; margin: 10px;">
+        </div>
+    
+            <div class="main-container">
+                <header class="header">
+                    <h1 class="title">BASKETBALL APP</h1>
             <nav class="navbar">
-                <a href="/equipos" class="nav-link">EQUIPOS</a>
-                <a href="/jugadores" class="nav-link">JUGADOR</a>
-                <a href="/partidos" class="nav-link">PARTIDO</a>
+                <div class="btn">
+                    <a href="/equipos" class="nav-link">EQUIPOS</a>
+                </div>
+                
+                <div class="btn">
+                    <a href="/jugadores" class="nav-link">JUGADOR</a>
+                </div>
+                
+                <div class="btn">
+                    <a href="/partidos" class="nav-link">PARTIDO</a>
+                </div>
+
+                <div class="btn">
+                    <a href="/admin" class="nav-link">ADMIN</a>
+                </div>
             </nav>
-        </header>
+        </header>      
     </div>
+    
+    <div class="teams">
+            
+            <img src="{% static 'img/conferenciaEste/76.png' %}" alt="Team 1" style="width: 100px; height: auto; object-fit: cover; margin: 10px;">
+            <img src="{% static 'img/conferenciaEste/atlanta.png' %}" alt="Team 2" style="width: 100px; height: 100px; object-fit: cover; margin: 10px;">
+            <img src="{% static 'img/conferenciaEste/brooklyn.png' %}" alt="Team 2" style="width: 100px; height: 100px; object-fit: cover; margin: 10px;">
+            <img src="{% static 'img/conferenciaEste/bucks.png' %}" alt="Team 2" style="width: 100px; height: 100px; object-fit: cover; margin: 10px;">
+            <img src="{% static 'img/conferenciaEste/bulls.png' %}" alt="Team 2" style="width: 100px; height: 100px; object-fit: cover; margin: 10px;">
+            <img src="{% static 'img/conferenciaEste/cavaliers.png' %}" alt="Team 2" style="width: 100px; height: 100px; object-fit: cover; margin: 10px;">
+            <img src="{% static 'img/conferenciaEste/celtics.png' %}" alt="Team 2" style="width: 100px; height: 100px; object-fit: cover; margin: 10px;">
+            <img src="{% static 'img/conferenciaEste/hornets.png' %}" alt="Team 2" style="width: 100px; height: 100px; object-fit: cover; margin: 10px;">
+            <img src="{% static 'img/conferenciaEste/knicks.png' %}" alt="Team 2" style="width: 100px; height: 100px; object-fit: cover; margin: 10px;">
+            <img src="{% static 'img/conferenciaEste/miami.png' %}" alt="Team 2" style="width: 100px; height: 100px; object-fit: cover; margin: 10px;">
+            <img src="{% static 'img/conferenciaEste/orlando.png' %}" alt="Team 2" style="width: 100px; height: 100px; object-fit: cover; margin: 10px;">
+            <img src="{% static 'img/conferenciaEste/pistons.png' %}" alt="Team 2" style="width: 100px; height: 100px; object-fit: cover; margin: 10px;">
+            <img src="{% static 'img/conferenciaEste/raptors.png' %}" alt="Team 2" style="width: 100px; height: 100px; object-fit: cover; margin: 10px;">
+            <img src="{% static 'img/conferenciaEste/wizards.png' %}" alt="Team 2" style="width: 100px; height: 100px; object-fit: cover; margin: 10px;">
+            <img src="{% static 'img/conferenciaEste/atlanta.png' %}" alt="Team 2" style="width: 100px; height: 100px; object-fit: cover; margin: 10px;">
+    </div>
+</div>
 </body>
 </html>
 
