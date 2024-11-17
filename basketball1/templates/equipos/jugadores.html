@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Jugadores</title>
-    
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/listadoequipos.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
 </head>
 <body class="container mt-5">
+    <div class="main-principal">
     <div class="alert alert-info display-1 text-center">LISTA DE JUGADORES</div>
     
     {% if jugadores%}
@@ -35,9 +37,13 @@
                     <td>{{ jugadores.peso }}</td>
                     <td>{{ jugadores.edad }}</td>
                     <td>{{ jugadores.equipo.nombreEquipo}}</td>
-                    <td><a href="/eliminarjugador/{{jugadores.id}}" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></td>
-                    <td><a href="/actualizarjugador/{{jugadores.id}}" class="btn btn-success btn-sm"><i class="bi bi-pencil"></i></td>    
-                </tr>
+                    <td>
+                            <div class="acciontd">
+                                <a href="/eliminarjugador/{{jugadores.id}}" class="btn-eliminar btn-sm">ELIMINAR</a>
+                                <a href="/actualizarjugador/{{jugadores.id}}" class="btn-success btn-sm">ACTUALIZAR</a> 
+                            </div>
+                        </td>
+                    </tr>
             {% endfor %}
         </tbody>
     </table>
@@ -46,7 +52,10 @@
         <strong>No se encuentran equipos registrados en el sistema</strong>
     </div>
     {% endif %}
-    <a href="/" class="btn btn-danger">VOLVER</a>
-    <a href="/agregarjugador" class="btn btn-info float-end">AGREGAR JUGADOR</a>
+    <div class="botones">
+        <a href="/" class="btn btn-volver">VOLVER</a>
+        <a href="/agregarjugador" class="btn btn-agregar">AGREGAR JUGADOR</a>
+    </div>
+</div>
 </body>
 </html>

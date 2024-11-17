@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Equipos</title>
-    
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/listadoequipos.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
 </head>
 <body class="container mt-5">
     <div class="main-principal">
@@ -22,6 +23,7 @@
                     <th>Estadio</th>
                     <th>Año Fundacion</th>
                     <th>Accion</th>
+                    
                 </tr>
         </thead>
         <tbody>
@@ -32,8 +34,12 @@
                     <td>{{ equipo.conferencia }}</td>
                     <td>{{ equipo.estadio }}</td>
                     <td>{{ equipo.anioFundacion }}</td>
-                    <td><a href="/eliminarEquipos/{{equipo.id}}" class="btn btn-eliminar btn-sm"><i class="bi bi-trash"></i></td>
-                    <td><a href="/actualizarEquipos/{{equipo.id}}" class="btn btn-success btn-sm"><i class="bi bi-pencil"></i></td>    
+                    <td>
+                        <div class="acciontd">
+                            <a href="/eliminarEquipos/{{equipo.id}}" class="btn-eliminar btn-sm">ELIMINAR</a>
+                            <a href="/actualizarEquipos/{{equipo.id}}" class="btn-success btn-sm">ACTUALIZAR</a> 
+                        </div>
+                    </td>
                 </tr>
             {% endfor %}
         </tbody>

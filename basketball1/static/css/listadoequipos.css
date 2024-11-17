@@ -7,7 +7,7 @@
     --font-family: 'Roboto', sans-serif;
 }
 
-/*esta es la caja o contenedor principal de la pantalla*/
+
 .main-principal {
     font-family: var(--font-family);
     display: flex;
@@ -19,7 +19,7 @@
     border-bottom: 1px solid var(--nba-gray);
 }
 
-/*este estilo es sobre el div de lista de equipos*/
+
 .alert-info {
     font-size: 2.5em;
     color: white;
@@ -60,7 +60,7 @@
     background-color: #e9f5ff;
 }
 
-/*este es el div de los botones de abajo */
+
 .btn {
     margin-top: 30px;
     background-color: #1D428A;
@@ -82,11 +82,21 @@
 
 .btn-eliminar {
     background-color: #dc3545;
+    color: white;
+    text-decoration: none;
+    
+    width: 100px;
+    padding: 2px;
+    border-radius: 10px;
+    text-align: center;
+    justify-content: center;
+    margin-right: 30px;
     
 }
 
 .btn-eliminar:hover {
     background-color: #c82333;
+
 }
 
 .botones{
@@ -103,6 +113,16 @@
 
 .btn-success {
     background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    
+    width: 100px;
+    padding: 2px;
+    border-radius: 10px;
+    text-align: center;
+    justify-content: center;
+    
+    
 }
 
 .btn-success:hover {
@@ -115,4 +135,11 @@
 .btn-sm i {
     font-size: 1.2em;
     vertical-align: middle;
+    
+}
+
+.acciontd{
+    display: flex;
+    
+    align-items: center;
 }

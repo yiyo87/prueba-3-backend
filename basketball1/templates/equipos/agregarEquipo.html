@@ -9,14 +9,14 @@
 </head>
 <body>
     <div class="container">
-        <div class="alert alert-info text-center">FORMULARIO EQUIPO</div>
+        <div class="alert alert-info text-center agregar-titulo">FORMULARIO EQUIPO</div>
         <form method="post">
             {{ form.as_p }}
             {% csrf_token %}
             <input type="submit" value="Agregar Equipo" class="btn btn-info">
         </form>
         <div class="back-btn-container">
-            <a href="../equipos" class="btn btn-info">EQUIPOS</a>
+            <a href="../equipos" class="btn-info">EQUIPOS</a>
         </div>
     </div>
 </body>

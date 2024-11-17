@@ -1,7 +1,14 @@
-/* agregar_equipo.css */
+:root {
+    --nba-blue: #1D428A;
+    --nba-red: #C8102E;
+    --nba-white: #FFFFFF;
+    --nba-gray: #333333;
+    --nba-light-gray: #F8F9FA;
+    --font-family: 'Roboto', sans-serif;
+}
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: var(--font-family);
     background-color: #f5f5f5;
     color: #333;
     display: flex;
@@ -11,6 +18,7 @@ body {
     margin: 0;
 }
 
+
 .container {
     text-align: center;
     max-width: 400px;
@@ -18,9 +26,10 @@ body {
 }
 
 .alert-info {
+
     font-size: 1.8em;
-    color: #333;
-    background-color: #e1f5fe;
+    color:white;
+    background-color: #1D428A;
     padding: 15px;
     margin-bottom: 20px;
     border-radius: 8px;
@@ -50,7 +59,7 @@ form select {
 
 form input[type="submit"] {
     width: 100%;
-    background-color: #17a2b8;
+    background-color: #1D428A;
     color: #fff;
     padding: 10px;
     margin-top: 20px;
@@ -61,17 +70,15 @@ form input[type="submit"] {
     transition: background-color 0.3s ease;
 }
 
-form input[type="submit"]:hover {
-    background-color: #138496;
-}
+
 
 .back-btn-container {
     text-align: center;
 }
 
-a.btn-info {
+.btn-info {
     display: inline-block;
-    background-color: #007bff;
+    background-color: #1D428A;
     color: #fff;
     padding: 10px 20px;
     margin-top: 20px;
