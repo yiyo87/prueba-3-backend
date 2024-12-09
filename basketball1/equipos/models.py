@@ -26,6 +26,7 @@ class Jugador(models.Model):
         ('PF', 'Ala-Pivot (Power Forward)'),
         ('C', 'Pivot (Center)'),
     ]
+    
     nombre = models.CharField(max_length=50)
     apellido = models.CharField(max_length=50)
     posicion = models.CharField(max_length=2,choices=POSICIONES, default='PG')
@@ -53,3 +54,5 @@ class Partido(models.Model):
 
     def __str__(self):
         return f"Partido en {self.estadio} - {self.fecha.strftime('%Y-%m-%d')} {self.hora.strftime('%H:%M')}"
+    
+

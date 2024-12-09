@@ -1,8 +1,12 @@
 from django.shortcuts import render,redirect
 from . import forms
-
+from .serializers import JugadorSerializer, EquipoSerializer, PartidoSerializer
 from equipos.forms import FormularioEquipo, FormularioJugador, FormularioPartido
 from equipos.models import Equipo, Jugador, Partido
+from django.http import JsonResponse
+from rest_framework.response import Response
+from rest_framework.decorators import api_view
+from rest_framework import viewsets
 
 # Create your views here.
 
@@ -127,3 +131,61 @@ def actualizarPartido(request,id):
 
 
 #----------------------------------------------------------------#
+
+def listadoJugadores1(resquest):
+    jugadores = Jugador.objects.all()
+    data = {'jugadores': list(jugadores.values('nombre','apellido','posicion','altura','peso','edad','equipo'))}
+    return JsonResponse(data)
+
+@api_view(['GET','POST'])
+def lista_jugadores(request):
+    if request.method == 'GET':
+        jugadores = Jugador.objects.all()
+        serializer = JugadorSerializer(jugadores, many=True)
+        return Response(serializer.data)
+    
+    if request.method == 'POST':
+        serializer = JugadorSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=201)
+        return Response(serializer.errors, status=400)
+
+@api_view(['GET','PUT','DELETE'])
+def jugadores_detalle(request, pk):
+    try:
+        jugador = Jugador.objects.get(pk=pk)
+    except Jugador.DoesNotExist:
+        return Response(status=404)
+    
+    if request.method == 'GET':
+        serializer = JugadorSerializer(jugador)
+        return Response(serializer.data)
+    
+    if request.method == 'PUT':
+        serializer = JugadorSerializer(jugador, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=400)
+    
+    if request.method == 'DELETE':
+        jugador.delete()
+        return Response(status=204)
+    
+
+    
+
+#---------------------------------------------------------------#
+
+class jugadoresViewSets(viewsets.ModelViewSet):
+    queryset = Jugador.objects.all()
+    serializer_class = JugadorSerializer
+
+class equiposViewSets(viewsets.ModelViewSet):
+    queryset = Equipo.objects.all()
+    serializer_class = EquipoSerializer
+
+class partidosViewSets(viewsets.ModelViewSet):
+    queryset = Partido.objects.all()
+    serializer_class = PartidoSerializer
