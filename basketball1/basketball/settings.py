@@ -55,8 +55,8 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",  # Tu frontend local
-    "http://127.0.0.1:8000",  # Otra variación local
+    "http://localhost:3000", 
+    "http://127.0.0.1:8000",  
 ]
 
 ROOT_URLCONF = 'basketball.urls'

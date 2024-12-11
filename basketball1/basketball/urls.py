@@ -50,6 +50,12 @@ urlpatterns = [
     path('jugadoresfunction/',views.lista_jugadores),
     path('jugadoresapi2/<int:pk>',views.jugadores_detalle),
 
+    path('equiposapi/',views.listadoEquipos1),
+    path('equiposfunction/',views.lista_equipos),
+    path('equipoapi2/<int:pk>',views.equipo_detalle),
+
+    path ('partidoapi/',views.listadoPartidos1),
+
     path('', include(router.urls)),
     
 ]
